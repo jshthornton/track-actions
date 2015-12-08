@@ -29,8 +29,7 @@ export default class {
   _onAction(e) {
     var $node = $(e.target);
     var nodeActions = $node.data('trackActions');
-    nodeActions = '[' + nodeActions + ']';
-    nodeActions = JSON.parse(nodeActions);
+    nodeActions = nodeActions.split(/, ?/);
 
     if(_.indexOf(nodeActions, e.type) === -1) {
       // Do not track
